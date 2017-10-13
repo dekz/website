@@ -132,6 +132,10 @@ const projects: Project[] = [
         projectUrl: constants.PARADEX_URL,
     },
     {
+        logoFileName: 'the_ocean.png',
+        projectUrl: constants.OCEAN_URL,
+    },
+    {
         logoFileName: 'dydx.png',
         projectUrl: constants.DYDX_URL,
     },
@@ -170,10 +174,6 @@ const projects: Project[] = [
     {
         logoFileName: 'augur.png',
         projectUrl: constants.AUGUR_URL,
-    },
-    {
-        logoFileName: 'ethix.png',
-        projectUrl: constants.ETHIX_URL,
     },
     {
         logoFileName: 'anx.png',
@@ -805,7 +805,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
             lineHeight: '33px',
             height: 49,
         };
-        const callToActionClassNames = 'col lg-col-8 md-col-8 col-12 lg-pr4 md-pr4 \
+        const callToActionClassNames = 'col lg-col-8 md-col-8 col-12 lg-pr3 md-pr3 \
                                         lg-right-align md-right-align sm-center sm-px3 h4';
         return (
             <div
@@ -819,7 +819,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                         className={callToActionClassNames}
                         style={{fontFamily: 'Roboto Mono', color: 'white', lineHeight: isSmallScreen ? 1.7 : 3}}
                     >
-                        Get started building the decentralized future
+                        Get started on building the decentralized future
                     </div>
                     <div className="col lg-col-4 md-col-4 col-12 sm-center sm-pt2">
                         <Link to={WebsitePaths.ZeroExJs} className="text-decoration-none">
