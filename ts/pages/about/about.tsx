@@ -239,10 +239,14 @@ export class About extends React.Component<AboutProps, AboutState> {
         const colSize = utils.getColSize(profiles.length);
         return _.map(profiles, profile => {
             return (
-                <Profile
-                    colSize={colSize}
-                    profileInfo={profile}
-                />
+                <div
+                    key={`profile-${profile.name}`}
+                >
+                    <Profile
+                        colSize={colSize}
+                        profileInfo={profile}
+                    />
+                </div>
             );
         });
     }

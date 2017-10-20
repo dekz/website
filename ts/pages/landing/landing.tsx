@@ -747,7 +747,10 @@ export class Landing extends React.Component<LandingProps, LandingState> {
             const projectLogos = _.map(useCase.projectIconUrls, (iconUrl: string, i: number) => {
                 const isFirst = i === 0;
                 return (
-                    <div style={{display: 'inline', paddingLeft: !isFirst ? 20 : 0}}>
+                    <div
+                        key={`project-logo-${iconUrl}`}
+                        style={{display: 'inline', paddingLeft: !isFirst ? 20 : 0}}
+                    >
                         <img src={iconUrl} style={{height: 75, opacity: 0.36}} />
                     </div>
                 );
