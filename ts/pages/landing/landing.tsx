@@ -23,12 +23,12 @@ interface AssetType {
     style?: React.CSSProperties;
 }
 interface UseCase {
-    project: string;
-    projectImageUrl: string;
+    imageUrl: string;
     type: string;
     description: string;
     classNames: string;
     style?: React.CSSProperties;
+    projectIconUrls: string[];
 }
 interface Project {
     logoFileName: string;
@@ -65,56 +65,6 @@ const boxContents: BoxContent[] = [
                       pool.',
         imageUrl: '/images/landing/open_source.png',
         classNames: 'right',
-    },
-];
-
-const useCases: UseCase[] = [
-    {
-        project: 'Aragon',
-        projectImageUrl: '/images/landing/aragon.png',
-        type: 'Decentralized governance',
-        description: 'Decentralized organizations use tokens to represent ownership and \
-                      guide their governance logic. 0x allows decentralized organizations \
-                      to seamlessly and safely trade ownership for startup capital.',
-        classNames: 'lg-pr2 md-pr2',
-    },
-    {
-        project: 'Augur',
-        projectImageUrl: '/images/landing/augur.png',
-        type: 'Prediction markets',
-        description: 'Decentralized prediction market platforms generate sets of tokens that \
-                      represent a financial stake in the outcomes of real-world events. 0x allows \
-                      these tokens to be instantly tradable.',
-        classNames: 'lg-px2 md-px2',
-    },
-    {
-        project: 'Maker',
-        projectImageUrl: '/images/landing/maker.png',
-        type: 'Stable tokens',
-        description: 'Novel economic constructs such as stable coins require efficient, liquid \
-                      markets to succeed. 0x will facilitate the underlying economic mechanisms \
-                      that allow the dai token to remain stable.',
-        classNames: 'lg-pl2 md-pl2',
-    },
-    {
-        project: 'Dharma',
-        projectImageUrl: '/images/landing/dharma.png',
-        type: 'Decentralized loans',
-        description: 'Dharma requires liquid markets where investors can buy and re-sell loans. \
-                      0x enables an ecosystem of lenders to self-organize and efficiently determine \
-                      market prices for all outstanding loans.',
-        classNames: 'lg-pt3 md-pt3 lg-pr2 md-pr2 lg-col-6 md-col-6',
-        style: {width: 291, float: 'right'},
-    },
-    {
-        project: 'Melonport',
-        projectImageUrl: '/images/landing/melonport.png',
-        type: 'Fund management',
-        description: 'Decentralized fund management limits fund managers to investing in pre-agreed \
-                      upon asset classes. Embedding 0x into Melonport smart contracts enables them to \
-                      enforce these security constraints.',
-        classNames: 'lg-pt3 md-pt3 lg-pl2 md-pl2 lg-col-6 md-col-6',
-        style: {width: 291},
     },
 ];
 
@@ -727,26 +677,85 @@ export class Landing extends React.Component<LandingProps, LandingState> {
     private renderUseCases() {
         const isSmallScreen = this.state.screenWidth === ScreenWidths.SM;
         const isMediumScreen = this.state.screenWidth === ScreenWidths.MD;
+
+        const useCases: UseCase[] = [
+            {
+                imageUrl: '/images/landing/governance_icon.png',
+                type: 'Decentralized governance',
+                description: 'Decentralized organizations use tokens to represent ownership and \
+                              guide their governance logic. 0x allows decentralized organizations \
+                              to seamlessly and safely trade ownership for startup capital.',
+                projectIconUrls: ['/images/landing/aragon.png'],
+                classNames: 'lg-px2 md-px2',
+            },
+            {
+                imageUrl: '/images/landing/prediction_market_icon.png',
+                type: 'Prediction markets',
+                description: 'Decentralized prediction market platforms generate sets of tokens that \
+                              represent a financial stake in the outcomes of real-world events. 0x allows \
+                              these tokens to be instantly tradable.',
+                projectIconUrls: ['/images/landing/augur.png', '/images/landing/gnosis.png'],
+                classNames: 'lg-px2 md-px2',
+            },
+            {
+                imageUrl: '/images/landing/stable_tokens_icon.png',
+                type: 'Stable tokens',
+                description: 'Novel economic constructs such as stable coins require efficient, liquid \
+                              markets to succeed. 0x will facilitate the underlying economic mechanisms \
+                              that allow these tokens to remain stable.',
+                projectIconUrls: ['/images/landing/maker.png'],
+                classNames: 'lg-px2 md-px2',
+            },
+            {
+                imageUrl: '/images/landing/loans_icon.png',
+                type: 'Decentralized loans',
+                description: 'Efficient lending requires liquid markets where investors can buy and re-sell loans. \
+                              0x enables an ecosystem of lenders to self-organize and efficiently determine \
+                              market prices for all outstanding loans.',
+                projectIconUrls: ['/images/landing/dharma.png', '/images/landing/lendroid.png'],
+                classNames: 'lg-pr2 md-pr2 lg-col-6 md-col-6',
+                style: {width: 291, float: 'right', marginTop: !isSmallScreen ? 38 : 0},
+            },
+            {
+                imageUrl: '/images/landing/fund_management_icon.png',
+                type: 'Fund management',
+                description: 'Decentralized fund management limits fund managers to investing in pre-agreed \
+                              upon asset classes. Embedding 0x into fund management smart contracts enables \
+                              them to enforce these security constraints.',
+                projectIconUrls: ['/images/landing/melonport.png'],
+                classNames: 'lg-pl2 md-pl2 lg-col-6 md-col-6',
+                style: {width: 291, marginTop: !isSmallScreen ? 38 : 0},
+            },
+        ];
+
         const cases = _.map(useCases, (useCase: UseCase) => {
             const style = _.isUndefined(useCase.style) || isSmallScreen ? {} : useCase.style;
             const useCaseBoxStyle = {
                 color: '#A2A2A2',
                 border: '1px solid #565656',
                 borderRadius: 4,
-                height: 170,
                 maxWidth: isSmallScreen ? 375 : 'none',
                 ...style,
             };
-            const typeStyle = {
-                lineHeight: 2,
-                fontSize: isMediumScreen ? 10 : 12.5,
+            const typeStyle: React.CSSProperties = {
+                color: '#EBEBEB',
+                fontSize: 13,
                 textTransform: 'uppercase',
                 fontFamily: 'Roboto Mono',
+                fontWeight: 300,
             };
+            const projectLogos = _.map(useCase.projectIconUrls, (iconUrl: string, i: number) => {
+                const isFirst = i === 0;
+                return (
+                    <div style={{display: 'inline', paddingLeft: !isFirst ? 20 : 0}}>
+                        <img src={iconUrl} height={45} />
+                    </div>
+                );
+            });
             return (
                 <div
-                    key={`useCase-${useCase.project}`}
-                    className={`col lg-col-4 md-col-4 col-12 sm-px3 sm-pb3 ${useCase.classNames}`}
+                    key={`useCase-${useCase.type}`}
+                    className={`col lg-col-4 md-col-4 col-12 sm-pt3 sm-px3 sm-pb3 ${useCase.classNames}`}
                 >
                     <div
                         className="relative p2 pb2 sm-mx-auto"
@@ -754,20 +763,12 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                     >
                         <div
                             className="absolute"
-                            style={{top: -26, left: 12}}
+                            style={{top: -35, left: 137}}
                         >
-                            <img src={useCase.projectImageUrl} height="40" />
+                            <img src={useCase.imageUrl} style={{height: 50}} />
                         </div>
-                        <div className="flex pt1">
-                            <div style={{color: 'white', fontSize: 18, fontWeight: 400}}>
-                                {useCase.project}
-                            </div>
-                            <div
-                                className="pl2"
-                                style={typeStyle}
-                            >
-                                {useCase.type}
-                            </div>
+                        <div className="pt2 center" style={typeStyle}>
+                            {useCase.type}
                         </div>
                         <div
                             className="pt2"
@@ -775,17 +776,21 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                         >
                             {useCase.description}
                         </div>
+                        <div className="center pt3">
+                            {projectLogos}
+                        </div>
                     </div>
                 </div>
             );
         });
         return (
             <div
-                className="clearfix pb4 sm-pt4"
+                className="clearfix pb4 lg-pt2 md-pt2 sm-pt4"
                 style={{backgroundColor: CUSTOM_HERO_BACKGROUND_COLOR}}
             >
                 <div
-                    className="mx-auto max-width-4 pb4 pt3 mt1 sm-mt2 clearfix"
+                    className="mx-auto pb4 pt3 mt1 sm-mt2 clearfix"
+                    style={{maxWidth: '67em'}}
                 >
                     {cases}
                 </div>
