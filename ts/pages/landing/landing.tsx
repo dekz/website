@@ -282,7 +282,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                                     <div className="lg-pr2 md-pr2 col col-6 sm-center">
                                         <Link to={WebsitePaths.ZeroExJs} className="text-decoration-none">
                                             <RaisedButton
-                                                style={{borderRadius: 6, minWidth: 150}}
+                                                style={{borderRadius: 6, minWidth: 157.36}}
                                                 buttonStyle={{borderRadius: 6}}
                                                 labelStyle={buttonLabelStyle}
                                                 label="Build on 0x"
