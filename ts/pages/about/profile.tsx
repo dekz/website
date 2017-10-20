@@ -27,7 +27,6 @@ interface ProfileProps {
 export function Profile(props: ProfileProps) {
     return (
         <div
-            key={props.profileInfo.name}
             className={`lg-col md-col lg-col-${props.colSize} md-col-6`}
         >
             <div
