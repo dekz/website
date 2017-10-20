@@ -29,10 +29,11 @@ export class TopBarMenuItem extends React.Component<TopBarMenuItemProps, TopBarM
     public render() {
         const primaryStyles = this.props.isPrimary ? {
             borderRadius: 4,
-            border: `2px solid ${this.props.isNightVersion ? '#979797' : 'rgb(230, 229, 229)'}`,
+            border: `1px solid ${this.props.isNightVersion ? '#979797' : 'rgb(230, 229, 229)'}`,
             marginTop: 15,
             paddingLeft: 9,
             paddingRight: 9,
+            width: 77,
         } : {};
         const menuItemColor = this.props.isNightVersion ? 'white' : this.props.style.color;
         const linkColor = _.isUndefined(menuItemColor) ?

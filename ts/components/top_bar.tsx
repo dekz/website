@@ -120,11 +120,11 @@ export class TopBar extends React.Component<TopBarProps, TopBarState> {
         ];
         const bottomBorderStyle = this.shouldDisplayBottomBar() ? styles.bottomBar : {};
         const fullWithClassNames = isFullWidthPage ? 'pr4' : '';
-        const logoUrl = isNightVersion ? '/images/protocol_logo_white.png' : '/images/top_bar_logo.png';
+        const logoUrl = isNightVersion ? '/images/protocol_logo_white.png' : '/images/protocol_logo_black.png';
         return (
             <div style={{...styles.topBar, ...bottomBorderStyle, ...this.props.style}} className="pb1">
                 <div className={parentClassNames}>
-                    <div className="col col-2 sm-pl2 md-pl2" style={{paddingTop: 15}}>
+                    <div className="col col-2 sm-pl2 md-pl2 lg-pl0" style={{paddingTop: 15}}>
                         <Link to={`${WebsitePaths.Home}`} className="text-decoration-none">
                             <img src={logoUrl} height="30" />
                         </Link>
@@ -132,7 +132,7 @@ export class TopBar extends React.Component<TopBarProps, TopBarState> {
                     <div className={`col col-${isFullWidthPage ? '8' : '9'} lg-hide md-hide`} />
                     <div className={`col col-${isFullWidthPage ? '6' : '5'} sm-hide xs-hide`} />
                     {!this.isViewingPortal() &&
-                        <div className={`col col-${isFullWidthPage ? '4' : '5'} ${fullWithClassNames} md-pr2 sm-hide xs-hide`}>
+                        <div className={`col col-${isFullWidthPage ? '4' : '5'} ${fullWithClassNames} lg-pr0 md-pr2 sm-hide xs-hide`}>
                             <div className="flex justify-between">
                                 <DropDownMenuItem
                                     title="Developers"

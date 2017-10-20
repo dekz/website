@@ -123,12 +123,12 @@ export class Footer extends React.Component<FooterProps, FooterState> {
             <div className="relative pb4 pt2" style={{backgroundColor: CUSTOM_DARK_GRAY}}>
                 <div className="mx-auto max-width-4 md-px2 lg-px0 py4 clearfix" style={{color: 'white'}}>
                     <div className="col lg-col-4 md-col-4 col-12 left">
-                        <div className="center sm-mx-auto" style={{width: 148}}>
+                        <div className="sm-mx-auto" style={{width: 148}}>
                             <div>
                                 <img src="/images/protocol_logo_white.png" height="30" />
                             </div>
-                            <div className="pt2" style={{fontSize: 11, color: CUSTOM_LIGHTEST_GRAY}}>
-                                Copyright © ZeroEx, Intl.
+                            <div style={{fontSize: 11, color: CUSTOM_LIGHTEST_GRAY, paddingLeft: 37, paddingTop: 2}}>
+                                © ZeroEx, Intl.
                             </div>
                         </div>
                     </div>
