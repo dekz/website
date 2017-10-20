@@ -754,8 +754,8 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                         style={useCaseBoxStyle}
                     >
                         <div
-                            className="absolute"
-                            style={{top: -35, left: 137}}
+                            className="absolute center"
+                            style={{top: -35, width: 'calc(100% - 32px)'}}
                         >
                             <img src={useCase.imageUrl} style={{height: 50}} />
                         </div>
