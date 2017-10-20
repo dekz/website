@@ -744,17 +744,6 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                 fontFamily: 'Roboto Mono',
                 fontWeight: 300,
             };
-            const projectLogos = _.map(useCase.projectIconUrls, (iconUrl: string, i: number) => {
-                const isFirst = i === 0;
-                return (
-                    <div
-                        key={`project-logo-${iconUrl}`}
-                        style={{display: 'inline', paddingLeft: !isFirst ? 20 : 0}}
-                    >
-                        <img src={iconUrl} style={{height: 75, opacity: 0.36}} />
-                    </div>
-                );
-            });
             return (
                 <div
                     key={`useCase-${useCase.type}`}
@@ -778,9 +767,6 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                             style={{lineHeight: 1.5, fontSize: 14, overflow: 'hidden', height: 104}}
                         >
                             {useCase.description}
-                        </div>
-                        <div className="center pt1">
-                            {projectLogos}
                         </div>
                     </div>
                 </div>
