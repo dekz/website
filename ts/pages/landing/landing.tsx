@@ -217,7 +217,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                     blockchainIsLoaded={false}
                     location={this.props.location}
                     isNightVersion={true}
-                    style={{backgroundColor: CUSTOM_HERO_BACKGROUND_COLOR}}
+                    style={{backgroundColor: CUSTOM_HERO_BACKGROUND_COLOR, position: 'relative'}}
                 />
                 {this.renderHero()}
                 {this.renderProjects()}
