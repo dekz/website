@@ -694,7 +694,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                 description: 'Decentralized prediction market platforms generate sets of tokens that \
                               represent a financial stake in the outcomes of real-world events. 0x allows \
                               these tokens to be instantly tradable.',
-                projectIconUrls: ['/images/landing/augur.png', '/images/landing/gnosis.png'],
+                projectIconUrls: ['/images/landing/augur.png'],
                 classNames: 'lg-px2 md-px2',
             },
             {
@@ -748,7 +748,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                 const isFirst = i === 0;
                 return (
                     <div style={{display: 'inline', paddingLeft: !isFirst ? 20 : 0}}>
-                        <img src={iconUrl} height={45} />
+                        <img src={iconUrl} style={{height: 75, opacity: 0.36}} />
                     </div>
                 );
             });
@@ -776,7 +776,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                         >
                             {useCase.description}
                         </div>
-                        <div className="center pt3">
+                        <div className="center pt1">
                             {projectLogos}
                         </div>
                     </div>
