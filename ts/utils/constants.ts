@@ -78,6 +78,7 @@ export const constants = {
     MINT_AMOUNT: new BigNumber('100000000000000000000'),
     WEB3_DOCS_URL: 'https://github.com/ethereum/wiki/wiki/JavaScript-API',
     WEB3_PROVIDER_DOCS_URL: 'https://github.com/ethereum/wiki/wiki/JavaScript-API#example-7',
+    ZEROEX_CHAT_URL: 'https://chat.0xproject.com',
     // Projects
     ETHFINEX_URL: 'https://www.bitfinex.com/ethfinex',
     RADAR_RELAY_URL: 'https://radarrelay.com',

@@ -242,7 +242,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
                                     </div>
                                     <div className="col col-6 sm-center">
                                         <a
-                                            href={constants.REDDIT_URL}
+                                            href={constants.ZEROEX_CHAT_URL}
                                             target="_blank"
                                             className="text-decoration-none"
                                         >
