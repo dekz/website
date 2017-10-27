@@ -65,6 +65,7 @@ export const constants = {
     HOME_SCROLL_DURATION_MS: 500,
     REDDIT_URL: 'https://reddit.com/r/0xproject',
     SLACK_URL: 'https://slack.0xproject.com/',
+    STANDARD_RELAYER_API_GITHUB: 'https://github.com/0xProject/standard-relayer-api/blob/master/README.md',
     SUCCESS_STATUS: 200,
     S3_0XJS_DOCUMENTATION_JSON_ROOT: 'https://s3.amazonaws.com/0xjs-docs-jsons',
     S3_SMART_CONTRACTS_DOCUMENTATION_JSON_ROOT: 'https://s3.amazonaws.com/smart-contracts-docs-json',

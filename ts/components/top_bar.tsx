@@ -110,6 +110,14 @@ export class TopBar extends React.Component<TopBarProps, TopBarState> {
                 <MenuItem style={{fontSize: styles.menuItem.fontSize}} primaryText="Smart Contracts" />
             </Link>,
             <a
+                key="subMenuItem-standard-relayer-api"
+                target="_blank"
+                className="text-decoration-none"
+                href={`${constants.STANDARD_RELAYER_API_GITHUB}`}
+            >
+                <MenuItem style={{fontSize: styles.menuItem.fontSize}} primaryText="Standard Relayer API" />
+            </a>,
+            <a
                 key="subMenuItem-whitePaper"
                 target="_blank"
                 className="text-decoration-none"
