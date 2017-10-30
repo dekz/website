@@ -10,7 +10,6 @@ This repository contains our website and [0x Portal DApp][portal-url] (over-the-
 [whitepaper-url]: https://0xproject.com/pdfs/0x_white_paper.pdf
 [portal-url]: https://0xproject.com/portal
 
-[![Slack Status](http://slack.0xProject.com/badge.svg)](http://slack.0xProject.com)
 [![Join the chat at https://gitter.im/0xProject/contracts](https://badges.gitter.im/0xProject/contracts.svg)](https://gitter.im/0xProject/contracts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
