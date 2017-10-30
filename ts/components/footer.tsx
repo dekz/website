@@ -57,10 +57,10 @@ const menuItemsBySection: MenuItemsBySection = {
     ],
     Community: [
         {
-            title: 'Slack',
+            title: 'Rocket.chat',
             isExternal: true,
-            path: constants.SLACK_URL,
-            fileName: 'slack.png',
+            path: constants.ZEROEX_CHAT_URL,
+            fileName: 'rocketchat.png',
         },
         {
             title: 'Blog',
@@ -105,10 +105,10 @@ const linkStyle = {
 };
 
 const titleToIcon: {[title: string]: string} = {
-    Slack: 'slack.png',
-    Blog: 'medium.png',
-    Twitter: 'twitter.png',
-    Reddit: 'reddit.png',
+    'Rocket.chat': 'rocketchat.png',
+    'Blog': 'medium.png',
+    'Twitter': 'twitter.png',
+    'Reddit': 'reddit.png',
 };
 
 export interface FooterProps {
