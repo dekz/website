@@ -367,6 +367,7 @@ export enum TypeDocTypes {
     Reflection = 'reflection',
     Union = 'union',
     TypeParameter = 'typeParameter',
+    Unknown = 'unknown',
 }
 
 export interface DocAgnosticFormat {

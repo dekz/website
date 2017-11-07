@@ -105,6 +105,9 @@ export function Type(props: TypeProps): any {
             typeName = type.name;
             break;
 
+        case TypeDocTypes.Unknown:
+            return null;
+
         default:
             throw utils.spawnSwitchErr('type.typeDocType', type.typeDocType);
     }
