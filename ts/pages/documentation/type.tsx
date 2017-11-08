@@ -46,6 +46,7 @@ export function Type(props: TypeProps): any {
     let typeArgs: React.ReactNode[] = [];
     switch (type.typeDocType) {
         case TypeDocTypes.Intrinsic:
+        case TypeDocTypes.Unknown:
             typeName = type.name;
             typeNameColor = BUILT_IN_TYPE_COLOR;
             break;
