@@ -159,8 +159,6 @@ export const constants = {
         'ECSignature',
         'ZeroExError',
         'EventCallback',
-        'EventCallbackAsync',
-        'EventCallbackSync',
         'ExchangeContractErrs',
         'ContractEvent',
         'Token',
